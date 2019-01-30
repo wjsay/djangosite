@@ -15,7 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls import url
+from django.urls import include
+from djangosite import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    url(r'^polls/', include('polls.urls')),
+    url(r'^app/', include('app.urls')),
+    path('myadmin/', admin.site.urls),
+    path('index/', views.index),
+    path('', views.index),
 ]
