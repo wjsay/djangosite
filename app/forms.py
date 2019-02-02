@@ -1,7 +1,7 @@
 from django.forms import ModelForm
-from app.models import Monent
+from app.models import Moment
 
 class MomentForm(ModelForm):
-    class meta:
-        model = Monent
+    class Meta:
+        model = Moment
         fields = '__all__'
